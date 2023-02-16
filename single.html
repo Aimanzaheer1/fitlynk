@@ -34,38 +34,143 @@
 
 
 <body>
+	<div class="mp-image">
 	<div class="body-back">
 		
 		<nav class="navigation">
+		<div class="logo"> 
+			<img src="./runMate (1).svg" alt="">
+		</div>
 		
 		<div id="menuToggle">
+			
 			
 			<input type="checkbox" />
 			<span></span>
 			<span></span>
 			<span></span>
 			<ul id="menu">
-				<a href="#">
-					<li>Home</li>
-				</a>
-				<a href="#">
-					<li>About</li>
-				</a>
-				<a href="#">
-					<li>Info</li>
-				</a>
-				<a href="#">
-					<li>Contact</li>
-				</a>
-				<a href="https://erikterwan.com/" target="_blank">
-					<li>Show me more</li>
-				</a>
+				<li>
+					<a href="#">
+						Home
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						Home
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						Home
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						Home
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						Home
+					</a>
+				</li>
 			</ul>
 		</div>
 		</nav>
-		<img src="mp-image.png" class="mp-image">
+		<img id="myImage" src="popup.png" class="img2">
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="paragraph">
+				Duration: 30 MINUTES
+                Brisk five-minute warmup walk. Then alternate 60 seconds of jogging and 90 seconds of walking for a total of 20 minutes.
+
+                WEEK-2
+
+                Duration: 31 MINUTES
+                Brisk five-minute warmup walk. Then alternate 90 seconds of jogging and two minutes of walking for a total of 20 minutes.</p>
+          </div>
+        </div>
+		<div class="section1">
+			<button class="button">START</button>
+			<div class="slideshow-container">
+
+				<div class="mySlides">
+				  <q>I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
+				  <p class="author">- John Keats</p>
+				</div>
+				
+				<div class="mySlides">
+				  <q>But man is not made for defeat. A man can be destroyed but not defeated.</q>
+				  <p class="author">- Ernest Hemingway</p>
+				</div>
+				
+				<div class="mySlides">
+				  <q>I have not failed. I've just found 10,000 ways that won't work.</q>
+				  <p class="author">- Thomas A. Edison</p>
+				</div>
+				
+				<a class="prev" onclick="plusSlides(-1)">❮</a>
+				<a class="next" onclick="plusSlides(1)">❯</a>
+				
+				</div>
+				
+				<div class="dot-container">
+				  <span class="dot" onclick="currentSlide(1)"></span> 
+				  <span class="dot" onclick="currentSlide(2)"></span> 
+				  <span class="dot" onclick="currentSlide(3)"></span> 
+				</div>
+		<hr class="bg-danger border-8 border-top border-danger">
 	</div>
-	
+</div>
+
 </body>
+
+	  
+<script>
+	// Get the modal
+var modal = document.getElementById("myModal");
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImage");
+var modalImg = document.querySelector(".modal-content p");
+img.onclick = function(){
+  modal.style.display = "block";
+  //modalImg.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
 
 </html>
