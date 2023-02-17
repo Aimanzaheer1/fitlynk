@@ -333,8 +333,8 @@ background-color: #efffc3;
 }
 .img2{
   position: relative;
-  left: 275px;
-  top: 4px;
+  left: 282px;
+  top: 26px;
   right: 0px;
 }
 
@@ -342,7 +342,7 @@ background-color: #efffc3;
 .slideshow-container {
   position: absolute;
   /* background: #f1f1f1f1; */
-  bottom: 32px;
+  bottom: 15px;
   left: 41px;
 }
 
